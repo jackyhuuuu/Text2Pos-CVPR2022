@@ -34,7 +34,21 @@ def get_mlp(channels: List[int], add_batchnorm: bool = True) -> nn.Sequential:
                 for i in range(1, len(channels))
             ]
         )
+### mlp = get_mlp([64, 128, 256], add_batchnorm=True) 
+# 将生成mlp模型
+# nn.Linear(64, 128)
+# nn.BatchNorm1d(128)
+# nn.ReLU()
+# nn.Linear(128, 256)
+# nn.BatchNorm1d(256)
+# nn.ReLU()
 
+### mlp = get_mlp([64, 128, 256], add_batchnorm=False)
+# 将生成mlp模型
+# nn.Linear(64, 128)
+# nn.ReLU()
+# nn.Linear(128, 256)
+# nn.ReLU()
 
 class LanguageEncoder(torch.nn.Module):
     def __init__(self, known_words, embedding_dim, bi_dir, num_layers=1):
